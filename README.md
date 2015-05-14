@@ -1,4 +1,4 @@
-angularjs-greensock-slideshow
+Presentation
 =============================
 
-Full page slideshow built in AngularJS and Greensock.
+AngaularJS Presentation
