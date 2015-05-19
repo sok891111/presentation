@@ -2,7 +2,12 @@ var app = angular.module('website', ['ngAnimate', 'ui.bootstrap']);
 
 app.controller('MainCtrl', function ($scope, $timeout) {
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 0614213f5e5a8df33f957aef083ad81cfafbd58b
     var slides =  
         [ { name: 'template1.html', url: 'slides/slide1.html'},
           { name: 'template2.html', url: 'slides/slide2.html'},
@@ -15,7 +20,11 @@ app.controller('MainCtrl', function ($scope, $timeout) {
           { name: 'template9.html', url: 'slides/slide9.html'} ];
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93d864a17e844a9c33a32f9e94824c2f34a8e66e
+>>>>>>> 0614213f5e5a8df33f957aef083ad81cfafbd58b
     function setCurrentSlideIndex(index) {
         $scope.currentIndex = index;
     }
@@ -25,19 +34,31 @@ app.controller('MainCtrl', function ($scope, $timeout) {
     }
 
     $scope.prevSlide = function () {
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+>>>>>>> 0614213f5e5a8df33f957aef083ad81cfafbd58b
         $scope.currentIndex = ($scope.currentIndex < $scope.slideCnt - 1) ? ++$scope.currentIndex : 0;
     };
 
     $scope.nextSlide = function () {
         $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slideCnt - 1;
+<<<<<<< HEAD
 
+=======
+=======
+>>>>>>> 0614213f5e5a8df33f957aef083ad81cfafbd58b
         $scope.currentIndex = ($scope.currentIndex < $scope.slides.length - 1) ? ++$scope.currentIndex : 0;
     };
 
     $scope.nextSlide = function () {
         $scope.currentIndex = ($scope.currentIndex > 0) ? --$scope.currentIndex : $scope.slides.length - 1;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93d864a17e844a9c33a32f9e94824c2f34a8e66e
+>>>>>>> 0614213f5e5a8df33f957aef083ad81cfafbd58b
     };
 
     $scope.moveSlide = function(keyCode){
@@ -49,6 +70,10 @@ app.controller('MainCtrl', function ($scope, $timeout) {
 
     $scope.testText ="Hello, Javascript";
     $scope.currentIndex = 0;
+<<<<<<< HEAD
+    $scope.slideCnt = 0;
+=======
+<<<<<<< HEAD
     $scope.slideCnt = 0;
     $scope.setCurrentSlideIndex = setCurrentSlideIndex;
     $scope.isCurrentSlideIndex = isCurrentSlideIndex;
@@ -68,9 +93,35 @@ app.directive('slides', function () {
     }
 });
 
+=======
+    $scope.slides = slides;
+    $scope.slide = $scope.slides[0];
+>>>>>>> 0614213f5e5a8df33f957aef083ad81cfafbd58b
+    $scope.setCurrentSlideIndex = setCurrentSlideIndex;
+    $scope.isCurrentSlideIndex = isCurrentSlideIndex;
+});
 
+
+
+app.directive('slides', function () {
+    return {
+        restrict:'AE',
+        scope: false,
+        transclude: true,
+        template: '<div class="animate-show" ng-show="isCurrentSlideIndex({{slideCnt}})"><div ng-transclude></div>',
+        link:function (scope, element, attr) {
+          scope.slideCnt++
+        }
+    }
+});
+
+
+<<<<<<< HEAD
    
 
 
 
 
+=======
+>>>>>>> 93d864a17e844a9c33a32f9e94824c2f34a8e66e
+>>>>>>> 0614213f5e5a8df33f957aef083ad81cfafbd58b
