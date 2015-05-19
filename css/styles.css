@@ -2,10 +2,15 @@ html{
     height: 100%;
     width: 100%;
     overflow-y:auto;
+<<<<<<< HEAD
     overflow-x:hidden;
 }
 body {
     margin-top:25px;
+=======
+}
+body {
+>>>>>>> 93d864a17e844a9c33a32f9e94824c2f34a8e66e
     overflow: hidden;
     min-height: 100%;
 }
