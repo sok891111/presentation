@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>AngularJS 학습모임</title>
+
+    <link href="https://raw.githubusercontent.com/angular/angular.js/master/images/favicon.ico" rel="icon" type="image/x-icon" />
+
     <link href="css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="libs/jquery.min.js"></script>
@@ -29,24 +32,286 @@
 
 </head>
 <body ng-controller="MainCtrl" ng-keyup="moveSlide($event.keyCode)">
+
+    <div class="container">
+<span style="float:right;margin-top:20px;">( {{currentIndex+1}} / {{slideCnt}} )</span>
+    <slides>
+        
+        <div class="header">
+          <h1>Javascript 학습모임</h1>
+          <div class="header-splitter"></div>
+        </div>
+        <div class="contents">
+          <script type="syntaxhighlighter" class="brush: js;"><![CDATA[
+            
+            /**
+             *  @Subject : AngularJS 학습 공유
+             *  @Date : 2015.05.19
+             *  @Part Members : 김종윤C, 오경진K, 
+             *                  유치송K, 김성진S, 양명조S
+             */
+            function Index($scope)
+            {
+
+                $scope.intro = "AngularJS 소개" //김성진S
+
+                $scope.demo = "AngularJS demo 시연" //유치송K
+
+                $scope.plan = "학습모임 파트 진행 방향" //김종윤C
+
+            }
+          ]]></script>
+        </div>
+
+
+    </slides>
+
+    <slides>
+
+       <div class="header">
+        <h1>AngularJS <small>AngularJs란?</small></h1>
+        <div class="header-splitter"></div>
+      </div>
+      <div class="contents">
+      <div>
+        <div>
+        <dl>
+          <dt>* Miško Hevery(미스코 헤브리) <sup>[1]</sup> 
+          <br/>
+          <div>
+            <img src="http://misko.hevery.com/wp-content/uploads/2008/07/me-150x150.jpg" alt="Miško Hevery" height="210" width="210" style="margin:10px 10px 10px 10px;float:left">
+            <ul style="margin-left:210px;">
+              <li>adam abrons과 기업용 소프트웨어를 만들기 위한 툴로 Angular를 시작<sup>[2]</sup></li>
+              <li>벤처 실패 후 Angular를 오픈 소스로 공개<sup>[2]</sup></li>
+              <li>구글 입사 후 구글 Feedback 시스템을 개발 중 1만7천줄의 코드를 Angular를 이용하여 1천500줄로 개발<sup>[3]</sup></li>
+              <li>이후 Angular 커뮤니티 활성화<sup>[3]</sup></li>
+              <li>구글의 DoubleClick 인수 후 사이트 재구축 당시 Angular를 사용하며 많은 발전<sup>[3]</sup></li>
+            </ul>
+          </div>
+          </dt>
+        </dl>
+        </div>
+        <br/><br/>
+        <div>
+         <img src="https://angularjs.org/img/AngularJS-large.png" alt="angularjs" height="300" width="750" style="margin:10px 10px 10px 10px;"><sup>[4]</sup>
+         <div><h4>* 현재 AngularJS 커뮤니티에서 TOP 10 contributors는 모두 구글 직원(커밋 시점 기준)<sup>[3]</sup></h4>
+         </div>
+        </div>
+      </div>
+      </div>
+
+    </slides>
+
+    <slides>
+
+        <div class="header">
+          <h1>AngularJS <small>Video</small></h1>
+          <div class="header-splitter"></div>
+        </div>
+        <div class="contents">
+            <h3>* Miško Hevery의 AngularJS 소개 동영상</h3>
+            <br/>
+           <iframe width="560" height="315" src="https://www.youtube.com/embed/khk_vEF95Jk" frameborder="0" allowfullscreen></iframe>
+           <span><h6>출처:<a>https://youtu.be/khk_vEF95Jk</a></h6></span>
+           <br/>
+          <dl>
+          <dt><h4>* 간단한 요약</h4></dt>
+          <dt>
+            <ul>
+              <li>ajax 스타일 application은 개발이 힘듬</li>
+              <li>Jquery는 화려한 DOM 제어를 가능하게 하지만 한계가 존재</li>
+              <li>Web 개발의 80%는 Dump code 를 위한 것이고 20%만이 실제 coding</li>
+              <li>Jquery는 too low level</li>
+            </ul>
+          </dt>
+          </dl>
+
+          <h2><img src="http://images.gofreedownload.net/thumps/plain-right-arrow-head-clip-art-15866.jpg" height="15" width="15"> AngularJS가 해결책이다</h2>
+        </div>
+
+    </slides>
+
+    <slides>
+      <div class="header">
+        <h1>AngularJS <small>Sample Source</small></h1>
+        <div class="header-splitter"></div>
+      </div>
+      <div class="contents">
+       <script type="syntaxhighlighter" class="brush: js;"><![CDATA[
+        // js
+        var myApp = angular.module('myApp', []);
+
+        myApp.controller('MainCtrl',['$scope',function($scope){
+            
+            $scope.text = 'Hello, Javascript';
+            
+        }]);
+
+        ]]></script>
+        <script type="syntaxhighlighter" class="brush: xml;"><![CDATA[
+
+        <!-- html -->
+        <div ng-app="myApp">
+            <div ng-controller="MainCtrl">
+              {{text}}
+            </div>
+        </div>
+        
+        ]]></script>
+        <div style="top-margin:10px;">
+          <h2>
+          result : <br/>
+          <p style="text-indent: 2em;">{{testText}}</p>
+          </h2>
+        </div>
+      </div>
+    </slides>
+
+    <slides>
+
+      <div class="header">
+        <h1>AngularJS <small>특징</small></h1>
+        <div class="header-splitter"></div>
+      </div>
+      <div class="contents">
+        <script type="syntaxhighlighter" class="brush: js;"><![CDATA[
+          /**
+           * Jquery
+           */
+           $(document).ready(function(){
+              $('#foo').keyup(function(e){
+                  $("#fResult").text(this.value);
+              });
+           });
+        ]]></script>
+        <script type="syntaxhighlighter" class="brush: xml;"><![CDATA[
+          입력 : <input type="text" id="foo"/><br/>
+          결과 : <span id="fResult"></span>
+        ]]></script>
+
+        <script>
+          $(document).ready(function(){
+              $('#foo').keyup(function(e){
+                  $("#fResult").text(this.value);
+              });
+           });
+        </script>
+        입력 : <input type="text" id="foo"/><br/>
+        결과 : <span id="fResult"></span>
+        <br/><br/>
+        <script type="syntaxhighlighter" class="brush: xml;"><![CDATA[
+       <div ng-app="myApp">
+            <div ng-controller="MainCtrl">
+             입력 : <input type="text" ng-model="foo"/><br/>
+             결과 : <span>{{foo}}</span>
+            </div>
+        </div>
+        ]]></script>
+       <div ng-app="myApp">
+            <div ng-controller="MainCtrl">
+             입력 : <input type="text" ng-model="foo"/><br/>
+             결과 : <span>{{foo}}</span>
+            </div>
+        </div>
+      </div>
+    </slides>
+
+    <slides>
+        <div class="header">
+          <h1>AngularJS <small>특징</small></h1>
+          <div class="header-splitter"></div>
+        </div>
+        <div class="contents">
+        <dl>
+          <dt><h3>Angular의 철학<sup>[2]</sup></h3></dt>
+          <dd>
+            <ul>
+              <li>DOM 제어와 비지니스 로직은 분리되어야한다.</li>
+              <li>어플리케이션의 Client Side와 Server Side는 분리되어야 한다.</li>
+              <li>Angular를 통해 어플리케이션 개발의 전체 과정 UI, 비지니스 로직, 테스팅을 가능하도록 한다.</li>
+            </ul>
+          </dd>
+          <dt><h3>Angular의 특징<sup>[5]</sup></h3><dt>
+          <dd>
+            <ul>
+              <li>MVC 구조를 제공</li>
+              <li>View와 Model의 양방향 데이터 바인딩을 지원</li>
+              <li>콜백함수로부터의 해방</li>
+              <li>재사용이 쉬운 UI컴포넌트 생성 가능(선언적 HTML)</li>
+              <li>뷰 코드와 로직코드의 분리</li>
+              <li>데이터 중심적 개발</li>
+            </ul>
+          </dd>
+          <dt><h3>Backbone.js와의 비교<sup>[2]</sup></h3><dt>
+          <dd>
+            <ul>
+              <li>View와 Model의 동기화 방법 차이</li>
+              <li>Backbone.js는 underscore의 template() 함수를 사용하여 Templating을 구현하고 angular는 커스터마이징된 html 태그와 Angular Expression 을 이용</li>
+              <li>그 외에 SPA(Single Page Application) 개발을 위한 대부분의 기능은 비슷</li>
+            </ul>
+          </dd>
+        </dl>
+        </div>
+    </slides>
+
+    <slides>
+      <div class="header">
+        <h1>AngularJS <small>문법</small></h1>
+        <div class="header-splitter"></div>
+      </div>
+      <div class="contents">
+      <h3>AngularJS Controller<sup>[6]</sup></h3>
+      <iframe width="50%" height="300" src="//jsfiddle.net/sungjinKim2/he0fhsvd/3/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      <h3>AngularJS directive<sup>[6]</sup></h3>
+      <h5>-디렉티브의 가장 간단한 형태는 애플리케이션이 필요한 곳에 여러 번 사용할 수 있는 작은 HTML 조각 형태</h5>
+      <iframe width="50%" height="300" src="//jsfiddle.net/sungjinKim2/he0fhsvd/6/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+      </div>
+    </slides>
+
+    <slides>
+      <div class="header">
+        <h1>AngularJS</h1>
+        <div class="header-splitter"></div>
+      </div>
+      <div class="contents">
+      <img src="http://cfile10.uf.tistory.com/image/242D4F505360DE221B766E">
+      </div>
+      </slides>
+
+      <slides>
+      <div class="header">
+        <h1>References</h1>
+        <div class="header-splitter"></div>
+      </div>
+      <div class="contents">
+        <h3>*source : </h3>
+        <ul>
+          <li><a>http://misko.hevery.com/about/<sup>[1]</sup></a></li>
+          <li><a>http://en.wikipedia.org/wiki/AngularJS<sup>[2]</sup></a></li>
+          <li><a>http://andrewaustin.com/an-overview-of-angularjs-for-managers/<sup>[3]</sup></a></li>
+          <li><a>https://angularjs.org<sup>[4]</sup></a></li>
+          <li><a>http://heiswed.tistory.com/entry/AngularJS-%EC%86%8C%EA%B0%9C<sup>[5]</sup></a></li>
+          <li><a>http://soomong.net/blog/2014/01/20/translation-ultimate-guide-to-learning-angularjs-in-one-day/<sup>[6]</sup></a></li>
+        </ul>
+      </div>
+    </slides>
+
+
     <div class="wrapper container"  id="wrap">
         <div>
             <div class="animate-show" ng-repeat="slide in slides"
                  ng-show="isCurrentSlideIndex($index)" ng-include="slide.url" style="opacity:$index" ></div>
          </div>
+
     </div>
 
     <a class="arrow prev" href="#" ng-click="nextSlide()"></a>
     <a class="arrow next" href="#" ng-click="prevSlide()"></a>
 
     
-    <div class="footer">
-        <div style="margin-top:13px;">
-            <div class="text-center">( {{currentIndex+1}} / {{slides.length}} )</div>
-        </div>
-    </div>
     <script>
        SyntaxHighlighter.all();
     </script>
 </body>
 </html>
+
